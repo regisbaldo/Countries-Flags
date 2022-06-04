@@ -10,6 +10,7 @@ export default {
   props: {
     cca2: {
       type: String,
+      required: true,
     },
     name: {
       type: String,

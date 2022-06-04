@@ -67,7 +67,7 @@
       v-if="paginate.data.length > 0"
       color="purple darken-3"
       v-model="currentPaginate"
-      :length="paginate.total_pages"
+      :length="paginate.totalPages"
       :value="currentPaginate"
     />
   </v-container>
