@@ -13,7 +13,7 @@
           v-for="(country, i) in paginate.data"
           :key="i"
         >
-          <flag :id="country.cca2" :img="country.flags.png" />
+          <flag :cca2="country.cca2" :img="country.flags.png" />
         </v-col>
       </v-row>
       <p v-else>Sem países vizinhos.</p>

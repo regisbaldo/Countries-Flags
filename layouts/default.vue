@@ -24,7 +24,6 @@ export default {
   data() {
     return {
       img: require("../assets/logo_principal.svg"),
-      title: "Vuetify.js",
     };
   },
   computed: {

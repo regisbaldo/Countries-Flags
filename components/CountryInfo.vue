@@ -2,7 +2,7 @@
   <article>
     <v-row>
       <v-col cols="12" xs="12" sm="6" md="5" lg="5">
-        <flag :img="country.flags.png" :id="country.cca2" />
+        <flag :img="country.flags.png" :cca2="country.cca2" />
       </v-col>
       <v-col cols="12" xs="12" sm="6" md="7" lg="7">
         <p>Nome: {{ country.name.common }}</p>
@@ -15,7 +15,7 @@
         </p>
         <p>Sub-região: {{ country.subregion }}</p>
         <p>População: {{ country.population }}</p>
-        <p>Linguas: {{ formatedLanguages }}</p>
+        <p>Línguas: {{ formatedLanguages }}</p>
       </v-col>
     </v-row>
   </article>

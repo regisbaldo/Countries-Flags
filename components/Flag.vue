@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link :to="`/country/${id}`">
-    <v-img  :aspect-ratio="16/9" :src="img" :alt="`Flag of ${name}`" />
+  <nuxt-link :to="`/country/${cca2}`">
+    <v-img :aspect-ratio="16 / 9" :src="img" :alt="`Flag of ${name}`" />
   </nuxt-link>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: "Flag",
   props: {
-    id: {
+    cca2: {
       type: String,
     },
     name: {
@@ -17,14 +17,6 @@ export default {
     img: {
       type: String,
       required: true,
-    },
-    width: {
-      type: String,
-      default: "19.75rem",
-    },
-    height: {
-      type: String,
-      default: "11.31rem",
     },
   },
 };

@@ -8,6 +8,7 @@ export default {
   async asyncData({ query, error, $axios }) {
     let region = null;
     let countries = null;
+    
     if (query.region) {
       region = query.region;
       countries = await $axios

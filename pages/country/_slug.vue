@@ -12,17 +12,12 @@ export default {
       .catch(() => {
         error({ statusCode: 404, message: "Country not found" });
       });
-
-    if (country) {
-      if (country.borders.length > 0) {
-        country.borders = await $axios
-          .$get(
-            `alpha?codes=${country.borders.join(",")}&fields=name,flags,cca2`
-          )
-          .catch(() => {
-            error({ statusCode: 404, message: "Post not found" });
-          });
-      }
+    if (country?.borders.length > 0) {
+      country.borders = await $axios
+        .$get(`alpha?codes=${country.borders.join(",")}&fields=name,flags,cca2`)
+        .catch(() => {
+          error({ statusCode: 404, message: "Post not found" });
+        });
     }
 
     return { country };

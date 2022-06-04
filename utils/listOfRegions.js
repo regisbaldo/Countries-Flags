@@ -5,11 +5,11 @@ export const regions = [
     },
     {
         value: "Americas",
-        text: "Americas"
+        text: "Américas"
     },
     {
         value: "Asia",
-        text: "Asia"
+        text: "Ásia"
     },
     {
         value: "Europe",
@@ -17,6 +17,6 @@ export const regions = [
     },
     {
         value: "Oceania",
-        text: "Oceania"
+        text: "Oceânia"
     },
 ]
