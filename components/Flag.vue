@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="`/country/${id}`">
-    <img :src="img" :alt="`Flag of ${name}`" />
+    <v-img  :aspect-ratio="16/9" :src="img" :alt="`Flag of ${name}`" />
   </nuxt-link>
 </template>
 

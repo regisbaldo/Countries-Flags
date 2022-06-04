@@ -1,14 +1,17 @@
 <template>
-  <v-app>
+  <v-app light>
     <v-app-bar fixed app>
-      <v-toolbar-title v-text="title" />
+      <NuxtLink to="/">
+        <v-img max-height="70" max-width="70" :src="img"></v-img
+      ></NuxtLink>
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
+      <v-btn v-if="isNotHomeRoute" to="/" outlined tile color="purple darken-3">
+        <v-icon left color="purple darken-3">mdi-arrow-left-bottom</v-icon>
+        Voltar
       </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container class="pt-md-16">
         <Nuxt />
       </v-container>
     </v-main>
@@ -20,13 +23,19 @@ export default {
   name: "DefaultLayout",
   data() {
     return {
+      img: require("../assets/logo_principal.svg"),
       title: "Vuetify.js",
     };
+  },
+  computed: {
+    isNotHomeRoute() {
+      return this.$nuxt.$route.name !== "index";
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 html {
   font-family: "Montserrat", sans-serif;
 }

@@ -1,17 +1,23 @@
 <template>
   <article>
-    <p>Nome: {{ name }}</p>
-    <p>Capital: {{ capital }}</p>
-    <p>
-      Região:
-      <NuxtLink
-        :to="`/?region=${region}`"
-        >{{ region }}</NuxtLink
-      >
-    </p>
-    <p>Sub-região: {{ subRegion }}</p>
-    <p>População: {{ population }}</p>
-    <p>Linguas: {{ formatedLanguages }}</p>
+    <v-row>
+      <v-col cols="12" xs="12" sm="6" md="5" lg="5">
+        <flag :img="country.flags.png" :id="country.cca2" />
+      </v-col>
+      <v-col cols="12" xs="12" sm="6" md="7" lg="7">
+        <p>Nome: {{ country.name.common }}</p>
+        <p>Capital: {{ country.capital[0] }}</p>
+        <p>
+          Região:
+          <NuxtLink :to="`/?region=${country.region}`">{{
+            country.region
+          }}</NuxtLink>
+        </p>
+        <p>Sub-região: {{ country.subRegion }}</p>
+        <p>População: {{ country.population }}</p>
+        <p>Linguas: {{ formatedLanguages }}</p>
+      </v-col>
+    </v-row>
   </article>
 </template>
 
@@ -20,26 +26,11 @@ export default {
   name: "CountryInfo",
   computed: {
     formatedLanguages() {
-      return Object.values(this.languages).join(", ");
+      return Object.values(this.country.languages).join(", ");
     },
   },
   props: {
-    name: {
-      type: String,
-    },
-    capital: {
-      type: String,
-    },
-    region: {
-      type: String,
-    },
-    subRegion: {
-      type: String,
-    },
-    population: {
-      type: Number,
-    },
-    languages: {
+    country: {
       type: Object,
     },
   },

@@ -1,29 +1,32 @@
 <template>
-  <div>
-    <Flag :img="country.flags.png" :id="country.cca2" />
-    <CountryInfo
-      :name="country.name.common"
-      :capital="country.capital[0]"
-      :region="country.region"
-      :subRegion="country.subRegion"
-      :population="country.population"
-      :languages="country.languages"
-    />
-    <div class="list-of-flags">
-      <Flag
-        v-for="(flag, i) in paginate.data"
-        :key="i"
-        :id="flag.cca2"
-        :img="flag.flags.png"
-      />
-    </div>
+  <v-container>
+    <country-info :country="country" />
+    <section class="pt-16">
+      <h4>Países Vizinhos :</h4>
+      <v-row class="pt-8">
+        <v-col
+          cols="12"
+          xs="12"
+          sm="6"
+          md="4"
+          lg="4"
+          v-for="(country, i) in paginate.data"
+          :key="i"
+        >
+          <flag :id="country.cca2" :img="country.flags.png" />
+        </v-col>
+      </v-row>
+    </section>
 
     <v-pagination
+      class="mt-10"
+      v-if="paginate.data.length > 0"
+      color="purple darken-3"
       v-model="currentPaginate"
       :length="paginate.total_pages"
       :value="currentPaginate"
     />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -49,12 +52,7 @@ export default {
   methods: {
     paginator,
   },
-  watch: {
-    currentPaginate(page) {
-      console.log(page);
-    },
-  },
 };
 </script>
 
-<style></style>
+<style scoped></style>
