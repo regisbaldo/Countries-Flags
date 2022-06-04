@@ -13,7 +13,7 @@
             country.region
           }}</NuxtLink>
         </p>
-        <p>Sub-região: {{ country.subRegion }}</p>
+        <p>Sub-região: {{ country.subregion }}</p>
         <p>População: {{ country.population }}</p>
         <p>Linguas: {{ formatedLanguages }}</p>
       </v-col>

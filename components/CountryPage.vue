@@ -3,7 +3,7 @@
     <country-info :country="country" />
     <section class="pt-16">
       <h4>Países Vizinhos :</h4>
-      <v-row class="pt-8">
+      <v-row class="pt-8" v-if="paginate.data.length > 0">
         <v-col
           cols="12"
           xs="12"
@@ -16,6 +16,7 @@
           <flag :id="country.cca2" :img="country.flags.png" />
         </v-col>
       </v-row>
+      <p v-else>Sem países vizinhos.</p>
     </section>
 
     <v-pagination
