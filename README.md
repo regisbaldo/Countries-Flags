@@ -8,12 +8,12 @@ Vue.js
 Jest
 
 ## Para rodar esse projeto
-yarn install 
+yarn install <br />
 yarn run dev
 
 # ou se preferir rodar em forma de produção
-yarn install 
-yarn run build 
+yarn install <br />
+yarn run build <br />
 yarn run start
 
 
