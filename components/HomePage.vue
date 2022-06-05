@@ -48,7 +48,7 @@
         v-for="(country, i) in paginate.data"
         :key="i"
       >
-        <flag :cca2="country.cca2" :img="country.flags.png" />
+        <flag :flag="country" />
       </v-col>
     </v-row>
     <v-alert
@@ -162,7 +162,15 @@ export default {
       this.$axios
         .$get(`${this.typeOfSearch.resource}/${this.typeOfSearch.value}`)
         .then((response) => {
-          this.countries = response;
+          this.countries = response.reduce((total, country) => {
+            total.push({
+              name: country.name.common,
+              img: country.flags.png,
+              cca2: country.cca2,
+            });
+            return total;
+          }, []);
+
           this.alert = false;
         })
         .catch(() => {

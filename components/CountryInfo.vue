@@ -2,7 +2,7 @@
   <article>
     <v-row>
       <v-col cols="12" xs="12" sm="6" md="5" lg="5">
-        <flag :img="country.flags.png" :cca2="country.cca2" />
+        <flag :flag="country" />
       </v-col>
       <v-col cols="12" xs="12" sm="6" md="7" lg="7">
         <p>Nome: {{ country.name.common }}</p>

@@ -1,23 +1,22 @@
 <template>
-  <nuxt-link :to="`/country/${cca2}`">
-    <v-img :aspect-ratio="16 / 9" :src="img" :alt="`Flag of ${name}`" />
+  <nuxt-link :to="`/country/${flag.cca2}`">
+    <v-img
+      :aspect-ratio="16 / 9"
+      :src="flag.img"
+      :alt="`Flag of ${flag.name}`"
+    />
   </nuxt-link>
 </template>
 
 <script>
+import flagValidator from "../utils/validator/flagValidator";
 export default {
   name: "Flag",
   props: {
-    cca2: {
-      type: String,
+    flag: {
+      type: Object,
       required: true,
-    },
-    name: {
-      type: String,
-    },
-    img: {
-      type: String,
-      required: true,
+      validator: flagValidator,
     },
   },
 };
