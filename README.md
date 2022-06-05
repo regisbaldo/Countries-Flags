@@ -1,5 +1,5 @@
 ### Projeto de bandeiras
-Esse projeto faz uma busca de países e retornar algumas informações do mesmo
+Esse projeto faz uma busca de países e retornar algumas informações dos mesmos
 
 ## Tecnologias utilizadas
 Nuxt.js
