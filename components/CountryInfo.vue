@@ -5,7 +5,7 @@
         <flag :flag="country" />
       </v-col>
       <v-col cols="12" xs="12" sm="6" md="7" lg="7">
-        <p>Nome: {{ country.name.common }}</p>
+        <p>Nome: {{ country.name }}</p>
         <p>Capital: {{ country.capital[0] }}</p>
         <p>
           Região:
